@@ -1,0 +1,16 @@
+{
+  "name": "jest-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc",
+    "test": "jest --watchAll"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^26.0.1",
+    "ts-jest": "^25.5.0",
+    "typescript": "^3.8.3"
+  }
+}
