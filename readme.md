@@ -4,7 +4,7 @@
 
 ## Steps to run
 
-- ```bash
-  yarn install
-  yarn test
-  ```
+```bash
+ yarn install
+ yarn test
+```
