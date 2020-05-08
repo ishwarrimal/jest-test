@@ -2,6 +2,10 @@ import {
   callbackTesting,
   promiseTesting,
   promiseTestingReject,
+  setCharmander,
+  setSquirtle,
+  clearSquirtle,
+  clearCharmander,
 } from "../../src/async";
 
 /*
@@ -35,6 +39,13 @@ describe("Testing callback", () => {
 
 // Testing promise
 describe("Testing promise", () => {
+  // implementation of beforeEach
+  beforeEach(() => {
+    setCharmander();
+  });
+  afterEach(() => {
+    clearCharmander();
+  });
   test("a promise to be retunred which will resolve to charmander", () => {
     // here its necessary to use return for us to wait for the promise
     return promiseTesting().then((data: string) => {
@@ -60,9 +71,16 @@ describe("Testing promise", () => {
 //Testing async await
 // NOTE: We can test promise using async await
 describe("testing async await", () => {
+  beforeAll(() => {
+    setSquirtle();
+  });
+
+  afterAll(() => {
+    clearSquirtle();
+  });
   test("to return squirtle after 1000ms await", async () => {
     const data = await promiseTesting();
-    expect(data).toMatch("charmander");
+    expect(data).toMatch("squirtle");
   });
   test("to throw error for rejected promise", async () => {
     try {
