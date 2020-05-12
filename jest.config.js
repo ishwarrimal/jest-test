@@ -6,5 +6,4 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   collectCoverage: true,
   automock: false,
-  setupFiles: ["./setupJest.js"],
 };

@@ -1,13 +1,10 @@
-import { add } from "../add";
-export * from "./userClass";
+// users.js
+import axios from "axios";
 
-export function total(x: number, y: number): string {
-  return "$" + add(x, y);
+class Users {
+  static all() {
+    return axios.get("/users/json").then((resp) => resp.data);
+  }
 }
 
-export const callbackTesting = (
-  callback: (value: string) => void,
-  someOperation: string
-) => {
-  callback(someOperation);
-};
+export default Users;

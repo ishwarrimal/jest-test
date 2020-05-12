@@ -10,11 +10,13 @@
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/whatwg-fetch": "0.0.33",
+    "axios-mock-adapter": "^1.18.1",
     "jest": "^26.0.1",
     "ts-jest": "^25.5.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "jest-fetch-mock": "^3.0.3"
+    "@types/axios": "^0.14.0",
+    "axios": "^0.19.2"
   }
 }
