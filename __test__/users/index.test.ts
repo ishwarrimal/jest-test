@@ -1,7 +1,8 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 var mock = new MockAdapter(axios);
-import Users from "../../src/mock";
+import { Users } from "../../src/users";
+jest.mock("../../src/users/db");
 
 describe("testing mock axios", () => {
   test("first test", () => {
@@ -12,5 +13,8 @@ describe("testing mock axios", () => {
     return Users.all().then((data) =>
       expect(data).toEqual({ users: [{ id: 1, name: "John Smith" }] })
     );
+  });
+  test("get fetch test", () => {
+    return expect(Users.getFetch()).resolves.toBe("200");
   });
 });
